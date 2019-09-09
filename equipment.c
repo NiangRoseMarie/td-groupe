@@ -29,7 +29,7 @@ void registreEquipment(infoEquipe f[6])
 			printf("Nom \n");
 			scanf("%s",f[r].eqment[f[r].n_equipment].nomE);
 			printf("Date de venue :\n");
-			f[r].eqment[f[r].n_equipment].dat_Entree=Date();// LA VARIABLE "f[r].n_equipment" N' A PAS ETE INITIALISER
+			f[r].eqment[f[r].n_equipment].dat_Entree=Date();
 			f[r].eqment[f[r].n_equipment].dat_Entree.Annee=AA;
 			printf("Date d'entretient de l'equipment :\n");
 			f[r].eqment[f[r].n_equipment].dat_Entretien=Date();
@@ -45,7 +45,7 @@ void registreEquipment(infoEquipe f[6])
 			}while(f[r].eqment[f[r].n_equipment].dat_Changement.Annee<AA);
 			printf("quantite :\n");
 			scanf("%d",&f[r].eqment[f[r].n_equipment].stock);
-			while(f[r].eqment[f[r].n_equipment].stock<0)// JE CHANGE PAS MAIS POURQUOI PAS <= PARCE QUE CA SERT A RIEN D'ENREGISTRER UN EQUIPEMENT SI IL Y'EN A 0 EN STOCK
+			while(f[r].eqment[f[r].n_equipment].stock<0)
 			{
 				printf("quantite inferieur a 0 reessayer:\n");
 				scanf("%d",&f[r].eqment[f[r].n_equipment].stock);
@@ -97,11 +97,11 @@ void sortiEquipment (infoEquipe f[6])
 			do{
 				printf("Saisir le numero de l'equipment :\n");
 				scanf("%d",&t);
-			}while(t<0);//DONC t LA JE PEUT METTRE 100
-			t=t-1;//TU PEUT JUSTE METTRE "t--;" 
+			}while(t<0);
+			t=t-1;//ou "t--;" 
 			printf("Combien vous en voulez\n");
 			scanf("%d",&n);
-			f[r].eqment[t].stock-=n;// TU NE VERIFIE  PAS SI LA QUANTITE DEMANDER EST SUPERIEUR A LA QUQMTITE EN STOCK
+			f[r].eqment[t].stock-=n;
 				printf("souhaiter vous prendre un autre equipment?\n1-oui\n2-non\n");
 				scanf("%d",&l);
 		}while(l==1);
@@ -155,7 +155,7 @@ float perfomanceE(infoEquipe f[6])
 }
 float frequencePanne(infoEquipe f[6])
 {
-	float pourcentages=-1;// MAINTENANT ET SI LE REEL POURCENTAGE EST 1 COMMENT TU VAS FAIRE LA DIFFERENCE POUR INITIALISE MET UNE VALEUR IMPOSSIBLE A OBTENIR ICI UNE VALEUR NEGATIVE PAR EXEMPLE
+	float pourcentages=-1;
 	int n,r;
 	char nom[10];
 	printf("Saisir le nom de votre equipe :\n");

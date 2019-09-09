@@ -8,8 +8,7 @@
 #include"planning.h"
 #define AA 2019
 
-int choix;//TU UTILISE CHOIX AVANT LE MAIN DONC MIEUX VAU LE DECLARER ICI O APRES LES TYPE ENREGISTREMENT MAIS PAS APRES LES FONCTION
-
+int choix;
 int menu () 
 {
 	int choix;
@@ -18,7 +17,7 @@ int menu ()
 		printf("2-Gerer le stock\n");
 		printf("3-afficher les statistiques\n");
 		scanf("%d",&choix);	
-	}while(choix<1 || choix>3);//"while(choix<1 && choix>3)"CEST 2 CONDITION NE PEEUVENT PAAS ETRE REALISER EN MEME TEMPS DONC CEST OU(||) QUE TU DOIS METTRE A LA PLACE DU ET(&&) JE RECTIFI EN MEME TEMPS
+	}while(choix<1 || choix>3);
 	return choix;
 }
 
